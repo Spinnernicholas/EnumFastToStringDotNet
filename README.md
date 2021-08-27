@@ -5,6 +5,7 @@ This is a Visual Studio C# source generator for automatically generating enum ex
 You can thank [Nick Chapsas](https://github.com/Elfocrash) on YouTube for making me aware of this. Check out his awesome video here: [C#'s Enum performance trap your code is suffering from](https://www.youtube.com/watch?v=BoE5Y6Xkm6w)
 
 ## Benchmark
+Benchmark done with [BenchmarkDotNet](https://benchmarkdotnet.org/). You can run it for yourself by opening the solution in Visual Studio and running the samples/Benchmark project.
 ```
 |                         Method |      Mean |     Error |    StdDev |  Gen 0 | Allocated |
 |------------------------------- |----------:|----------:|----------:|-------:|----------:|
