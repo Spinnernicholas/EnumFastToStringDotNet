@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumFastToStringDotNet", "src\EnumFastToStringDotNet\EnumFastToStringDotNet.csproj", "{51C4FF4D-5A77-4EBE-98D4-CE70241BC313}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmark", "samples\Benchmark\Benchmark.csproj", "{94B84E9B-ADEB-460A-9672-F8A47E617506}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{51C4FF4D-5A77-4EBE-98D4-CE70241BC313}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51C4FF4D-5A77-4EBE-98D4-CE70241BC313}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51C4FF4D-5A77-4EBE-98D4-CE70241BC313}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94B84E9B-ADEB-460A-9672-F8A47E617506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94B84E9B-ADEB-460A-9672-F8A47E617506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94B84E9B-ADEB-460A-9672-F8A47E617506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94B84E9B-ADEB-460A-9672-F8A47E617506}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
