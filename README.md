@@ -43,7 +43,7 @@ public enum HumanStates
 Console.Out.WriteLine(HumanStates.Dead.FastToString());
 ```
 
-##Customizing Source Generator
+## Customizing Source Generator
 
 You can customize the source generator by changing the const values in the EnumSwitchSourceGenerator.cs file.
 ```
