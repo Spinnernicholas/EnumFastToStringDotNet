@@ -19,7 +19,7 @@ You can thank Nick Shapsas on YouTube for making me aware of this. Check out his
 1. Add source generator reference to your project
 ```
   <ItemGroup>
-    <ProjectReference Include="path\to\EnumSwitchSourceGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="path\to\EnumFastToStringDotNet.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
 ```
 2. Add using statement
