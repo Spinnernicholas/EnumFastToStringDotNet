@@ -55,11 +55,11 @@ namespace EnumFastToStringGenerated
         {
             return states switch
             {
-                Benchmark.HumanStates.Idle => nameof(Benchmark.HumanStates.Idle),
-                Benchmark.HumanStates.Working => nameof(Benchmark.HumanStates.Working),
-                Benchmark.HumanStates.Sleeping => nameof(Benchmark.HumanStates.Sleeping),
-                Benchmark.HumanStates.Eating => nameof(Benchmark.HumanStates.Eating),
-                Benchmark.HumanStates.Dead => nameof(Benchmark.HumanStates.Dead),
+                Namespace.HumanStates.Idle => nameof(Namespace.HumanStates.Idle),
+                Namespace.HumanStates.Working => nameof(Namespace.HumanStates.Working),
+                Namespace.HumanStates.Sleeping => nameof(Namespace.HumanStates.Sleeping),
+                Namespace.HumanStates.Eating => nameof(Namespace.HumanStates.Eating),
+                Namespace.HumanStates.Dead => nameof(Namespace.HumanStates.Dead),
                 _ => throw new ArgumentOutOfRangeException(nameof(states), states, null)
             };
         }
