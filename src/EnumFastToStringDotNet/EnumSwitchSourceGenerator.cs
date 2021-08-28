@@ -12,7 +12,7 @@ namespace EnumSwitchSourceGenerator
     {
         private const string NAMESPACE = "EnumFastToStringGenerated";
         private const string ATTRIBUTE_NAME = "FastToString";
-        private const string EXTENTION_METHOD_NAME = "FastToString";
+        private const string EXTENSION_METHOD_NAME = "FastToString";
 
         public void Execute(GeneratorExecutionContext context)
         {
@@ -45,8 +45,15 @@ namespace {NAMESPACE}
                 var symbol = semanticModel.GetDeclaredSymbol(e);
                 var symbolName = $"{symbol.ContainingNamespace}.{symbol.Name}";
 
+                var attribute = symbol.GetAttributes().Where(x => x.AttributeClass.Name == ATTRIBUTE_NAME).FirstOrDefault();
+                var argumentList = ((AttributeSyntax)attribute.ApplicationSyntaxReference.GetSyntax()).ArgumentList;
+                var methodName = argumentList != null ? argumentList.Arguments
+                    .Where(x => x.NameEquals.Name.Identifier.Text == "MethodName")
+                    .Select(x => semanticModel.GetConstantValue(x.Expression).ToString())
+                    .DefaultIfEmpty(EXTENSION_METHOD_NAME).First() : EXTENSION_METHOD_NAME;
+
                 sourceBuilder.Append($@"
-        public static string {EXTENTION_METHOD_NAME}(this {symbolName} states)
+        public static string {methodName}(this {symbolName} states)
         {{
             return states switch
             {{
@@ -70,7 +77,10 @@ namespace {NAMESPACE}
 namespace {NAMESPACE}
 {{
     [AttributeUsage(AttributeTargets.Enum)]
-    public class {ATTRIBUTE_NAME}Attribute : Attribute{{}}
+    public class {ATTRIBUTE_NAME}Attribute : Attribute
+    {{
+        public string MethodName{{get; set;}}
+    }}
 }}
 ", Encoding.UTF8));
         }

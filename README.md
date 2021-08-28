@@ -43,7 +43,27 @@ public enum HumanStates
 Console.Out.WriteLine(HumanStates.Dead.FastToString());
 ```
 
-##Customizing Source Generator
+## Custom Method Name
+
+If you would like to use a different method name, you can do so with the attribute argument "MethodName".
+```
+[FastToString(MethodName = "CustomMethodName")]
+public enum HumanStates
+{
+    Idle,
+    Working,
+    Sleeping,
+    Eating,
+    Dead
+}
+```
+Then you can call the method like this:
+```
+Console.Out.WriteLine(HumanStates.Dead.CustomMethodName());
+```
+
+
+## Customizing Source Generator
 
 You can customize the source generator by changing the const values in the EnumSwitchSourceGenerator.cs file.
 ```
@@ -54,5 +74,5 @@ private const string NAMESPACE = "EnumFastToStringGenerated";
 private const string ATTRIBUTE_NAME = "FastToString";
 
 //The name of the extension method
-private const string EXTENTION_METHOD_NAME = "FastToString";
+private const string EXTENSION_METHOD_NAME = "FastToString";
 ```
