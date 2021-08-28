@@ -44,6 +44,29 @@ public enum HumanStates
 Console.Out.WriteLine(HumanStates.Dead.FastToString());
 ```
 
+5. The Automatically Generated Code
+```
+using System;
+namespace EnumFastToStringGenerated
+{
+    public static class EnumExtensions
+    {
+        public static string FastToString(this Benchmark.HumanStates states)
+        {
+            return states switch
+            {
+                Benchmark.HumanStates.Idle => nameof(Benchmark.HumanStates.Idle),
+                Benchmark.HumanStates.Working => nameof(Benchmark.HumanStates.Working),
+                Benchmark.HumanStates.Sleeping => nameof(Benchmark.HumanStates.Sleeping),
+                Benchmark.HumanStates.Eating => nameof(Benchmark.HumanStates.Eating),
+                Benchmark.HumanStates.Dead => nameof(Benchmark.HumanStates.Dead),
+                _ => throw new ArgumentOutOfRangeException(nameof(states), states, null)
+            };
+        }
+    }
+}
+```
+
 ## Customizing Source Generator
 
 You can customize the source generator by changing the const values in the EnumSwitchSourceGenerator.cs file.
