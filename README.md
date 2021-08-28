@@ -51,7 +51,7 @@ namespace EnumFastToStringGenerated
 {
     public static class EnumExtensions
     {
-        public static string FastToString(this Benchmark.HumanStates states)
+        public static string FastToString(this Namespace.HumanStates states)
         {
             return states switch
             {
