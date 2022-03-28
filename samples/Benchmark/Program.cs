@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
 using EnumFastToStringGenerated;
@@ -78,6 +79,7 @@ namespace Benchmark
     [FastToString]
     public enum HumanStates
     {
+        [Description("Not doing anything")]
         Idle,
         Working,
         Sleeping,

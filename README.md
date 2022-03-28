@@ -18,17 +18,17 @@ Benchmark done with [BenchmarkDotNet](https://benchmarkdotnet.org/). You can run
 ## Quick Start
 
 1. Add source generator reference to your project
-```
+```xml
   <ItemGroup>
     <ProjectReference Include="path\to\EnumFastToStringDotNet.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
 ```
 2. Add using statement
-```
+```c#
 using EnumFastToStringGenerated;
 ```
 3. Add [FastToString] attribute to your enum
-```
+```c#
 [FastToString]
 public enum HumanStates
 {
@@ -40,12 +40,12 @@ public enum HumanStates
 }
 ```
 4. Call FastToString method
-```
+```c#
 Console.Out.WriteLine(HumanStates.Dead.FastToString());
 ```
 
 5. The Automatically Generated Code
-```
+```c#
 using System;
 namespace EnumFastToStringGenerated
 {
@@ -70,7 +70,7 @@ namespace EnumFastToStringGenerated
 ## Custom Method Name
 
 If you would like to use a different method name, you can do so with the attribute argument "MethodName".
-```
+```c#
 [FastToString(MethodName = "CustomMethodName")]
 public enum HumanStates
 {
@@ -82,14 +82,14 @@ public enum HumanStates
 }
 ```
 Then you can call the method like this:
-```
+```c#
 Console.Out.WriteLine(HumanStates.Dead.CustomMethodName());
 ```
 
 ## Customizing Source Generator
 
 You can customize the source generator by changing the const values in the EnumSwitchSourceGenerator.cs file.
-```
+```c#
 //The namespace that the attribute and extension method classes are defined in
 private const string NAMESPACE = "EnumFastToStringGenerated";
 
