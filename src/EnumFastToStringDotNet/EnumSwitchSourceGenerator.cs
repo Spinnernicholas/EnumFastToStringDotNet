@@ -58,7 +58,7 @@ namespace {NAMESPACE}
             return states switch
             {{
 ");
-                foreach (string member in e.Members.Select(x => x.ToString()))
+                foreach (string member in e.Members.Select(x => x.Identifier.ValueText))
                     sourceBuilder.AppendLine($@"                {symbolName}.{member} => nameof({symbolName}.{member}),");
                 sourceBuilder.Append(@"                _ => throw new ArgumentOutOfRangeException(nameof(states), states, null)
             };
